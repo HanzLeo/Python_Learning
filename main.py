@@ -1,8 +1,13 @@
-sentence = input("请输入一段话: ")
-counter = {}
-for ch in sentence:
-    if "A" <= ch <= "Z" or "a" <= ch <= "z":
-        counter[ch] = counter.get(ch, 0) + 1
-sorted_keys = sorted(counter, key=counter.get, reverse=True)
-for key in sorted_keys:
-    print(f"{key} 出现了 {counter[key]} 次.")
+# 阶乘函数
+def fac(num):
+    result = 1
+    for n in range(2, num + 1):
+        result *= n
+    return result
+
+
+m = int(input("m = "))
+n = int(input("n = "))
+# 计算阶乘的时候不需要写重复的代码而是直接调用函数
+# 调用函数的语法是在函数名后面跟上圆括号并传入参数
+print(fac(m) // fac(n) // fac(m - n))
